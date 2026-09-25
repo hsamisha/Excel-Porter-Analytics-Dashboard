@@ -394,3 +394,4 @@ Business Analytics
 * 🔍 Operational Insights
 
 
+<img width="1303" height="578" alt="image" src="https://github.com/user-attachments/assets/9e4332e5-1626-45a7-bfb6-bcc57466eb9f" />
