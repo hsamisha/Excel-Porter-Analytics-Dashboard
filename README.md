@@ -1,397 +1,342 @@
-# 🚚 Porter Analytics – Food Delivery Data Analysis
+# Porter Analytics - Excel Dashboard
+
+## Project Overview
+
+The Porter Analytics project is an Excel-based data analysis and dashboard project focused on analyzing food delivery order data and understanding order patterns, delivery performance, food categories, pricing, order quantities, and delivery operations.
+
+The project uses Microsoft Excel to clean, transform, analyze, and visualize food delivery data through Excel calculations, pivot tables, charts, and dashboard reporting.
+
+The analysis provides insights into delivery duration, order activity, food categories, item quantities, order values, delivery partner availability, and outstanding orders.
+
+## Objective
+
+The main objectives of this project are to:
+
+- Analyze food delivery order data.
+- Understand delivery time patterns.
+- Analyze order activity across different days and times.
+- Examine food and restaurant categories.
+- Analyze order quantities and distinct items.
+- Understand order subtotal and pricing patterns.
+- Analyze delivery partner availability and workload.
+- Examine outstanding orders.
+- Identify operational patterns affecting delivery performance.
+- Analyze order activity by date and time.
+- Present important operational metrics through an Excel dashboard.
+- Generate meaningful insights from the available data.
+
+## Dataset Description
+
+The project uses a food delivery order dataset containing information about orders, stores, food categories, order timing, item quantities, pricing, and delivery-partner activity.
+
+The main dataset contains approximately 197,429 order records and includes information such as:
+
+- Market
+- Order creation time
+- Actual delivery time
+- Store
+- Store category
+- Order protocol
+- Number of items
+- Order subtotal
+- Distinct items
+- Minimum item price
+- Maximum item price
+- Delivery partners on shift
+- Busy delivery partners
+- Outstanding orders
+
+### Important Columns
+
+| Column | Description |
+|---|---|
+| `market_id` | Identifier for the market |
+| `created_at` | Date and time when the order was created |
+| `actual_delivery_time` | Date and time when the order was delivered |
+| `store_id` | Unique identifier of the store |
+| `store_primary_category` | Primary category of the store |
+| `order_protocol` | Order protocol used |
+| `total_items` | Total number of items in the order |
+| `subtotal` | Order subtotal |
+| `num_distinct_items` | Number of distinct items in the order |
+| `min_item_price` | Minimum item price |
+| `max_item_price` | Maximum item price |
+| `total_onshift_partners` | Number of delivery partners on shift |
+| `total_busy_partners` | Number of busy delivery partners |
+| `total_outstanding_orders` | Number of outstanding orders |
+
+Additional calculated fields were created for analysis, including:
+
+- Date
+- Time
+- Day Name
+- Month Name
+- Quarter
+- Duration Minutes
+- Rounded Duration
+- Quantity Size
+
+## Tools & Technologies Used
+
+- Microsoft Excel
+- Excel Tables
+- Excel Formulas
+- Pivot Tables
+- Pivot Charts
+- Data Cleaning
+- Data Transformation
+- Data Analysis
+- Data Visualization
+- Dashboard Design
+
+## Approach / Methodology
+
+The project was completed through the following stages.
+
+### 1. Data Collection
+
+The food delivery dataset was loaded into Microsoft Excel and organized in the `RAW` worksheet.
+
+### 2. Data Understanding
+
+The dataset was examined to understand:
 
-##  Project Overview
+- Order information
+- Store information
+- Food categories
+- Order timing
+- Item quantities
+- Pricing
+- Delivery duration
+- Delivery partner information
+- Outstanding orders
 
-**Porter Analytics** is an Excel-based data analysis project focused on understanding food delivery operations and order patterns.
+### 3. Data Cleaning
 
-The project analyzes order information, delivery times, restaurant categories, item quantities, order values, delivery partners, and operational conditions to identify meaningful patterns and insights.
+The raw data was reviewed and prepared for analysis by checking:
 
-The analysis is performed using **Microsoft Excel** with data cleaning, calculations, Pivot Tables, and an interactive dashboard.
+- Missing values
+- Date and time fields
+- Numerical fields
+- Categorical fields
+- Order-related variables
+- Delivery-related variables
 
+### 4. Data Transformation
 
+Additional fields were created to support the analysis:
 
-##  Project Objectives
+- Date
+- Time
+- Day Name
+- Month Name
+- Quarter
+- Duration Minutes
+- Round
+- Round2
+- Quantity Size
 
-The main objectives of this project are:
+These fields helped perform time-based and operational analysis.
 
-* Analyze food delivery orders.
-* Understand order volume and order patterns.
-* Analyze delivery duration.
-* Identify popular restaurant categories.
-* Analyze the number of items per order.
-* Analyze order value and subtotal.
-* Study delivery partner availability.
-* Examine busy and outstanding delivery partners.
-* Analyze delivery performance across different time periods.
-* Identify patterns in order and delivery operations.
-* Present key insights through an Excel dashboard.
+### 5. Exploratory Data Analysis
 
+The dataset was analyzed to understand:
 
+- Delivery duration
+- Order volume
+- Food categories
+- Order quantities
+- Subtotals
+- Item prices
+- Delivery partner activity
+- Outstanding orders
+- Daily order patterns
+- Time-based order patterns
 
-## Dataset
+### 6. Pivot Table Analysis
 
-The project uses food delivery order data containing information related to orders, stores, restaurants, delivery partners, and delivery times.
+Pivot tables and Excel calculations were used to summarize important metrics, including:
 
-### Important Fields
+- Average delivery duration by day
+- Average delivery duration by hour
+- Average delivery duration by market
+- Average order quantity
+- Food category subtotal
+- Subtotal by date
+- Subtotal by time
+- Minimum item price
+- Maximum item price
 
-| Field                        | Description                          |
-| ---------------------------- | ------------------------------------ |
-| **market_id**                | Identifier for the market            |
-| **created_at**               | Order creation date and time         |
-| **actual_delivery_time**     | Actual delivery date and time        |
-| **store_id**                 | Store identifier                     |
-| **store_primary_category**   | Primary category of the store        |
-| **order_protocol**           | Order protocol used                  |
-| **total_items**              | Total number of items in the order   |
-| **subtotal**                 | Order subtotal                       |
-| **num_distinct_items**       | Number of distinct items             |
-| **min_item_price**           | Minimum item price                   |
-| **max_item_price**           | Maximum item price                   |
-| **total_onshift_partners**   | Delivery partners currently on shift |
-| **total_busy_partners**      | Busy delivery partners               |
-| **total_outstanding_orders** | Outstanding orders                   |
+### 7. Dashboard Development
 
+The analyzed data was used to create an Excel dashboard containing KPIs, charts, and visual summaries.
+<img width="1433" height="667" alt="image" src="https://github.com/user-attachments/assets/7020f6d0-98f3-4b07-a7bd-a40a44a8dd63" />
+The dashboard provides a consolidated view of food delivery performance and operational patterns.
 
+## Analysis & Key Findings
 
-##  Tools Used
+### Delivery Duration Analysis
 
-* **Microsoft Excel**
-* Excel Tables
-* Excel Formulas
-* Pivot Tables
-* Pivot Charts
-* Slicers
-* Data Cleaning
-* Data Transformation
-* Dashboard Development
-* Data Visualization
+The overall average delivery duration in the analyzed calculations is approximately **34.45 minutes**.
 
+Delivery duration was analyzed across different days, hours, markets, and order characteristics.
 
+### Delivery Duration by Day
 
-##  Project Workflow
+The analysis shows that average delivery duration varies across the days of the week.
 
+| Day | Average Duration |
+|---|---:|
+| Sunday | 33.57 minutes |
+| Monday | 29.56 minutes |
+| Tuesday | 22.17 minutes |
+| Wednesday | 33.67 minutes |
+| Thursday | 38.36 minutes |
+| Friday | 34.29 minutes |
+| Saturday | 42.50 minutes |
 
-Raw Data
-   ↓
-Data Inspection
-   ↓
-Data Cleaning
-   ↓
-Data Transformation
-   ↓
-Feature Creation
-   ↓
-Calculations
-   ↓
-Pivot Table Analysis
-   ↓
-Data Visualization
-   ↓
-Dashboard Development
-   ↓
+Saturday has the highest average delivery duration among the analyzed days, while Tuesday has the lowest.
 
-##  Data Cleaning & Transformation
+### Delivery Duration by Time
 
-The project includes a separate **Clean** sheet for preparing the raw dataset for analysis.
+Delivery duration also varies by order hour.
 
-The data preparation process includes:
+The analysis includes delivery-duration comparisons across different hours, allowing periods with longer or shorter delivery times to be identified.
 
-* Organizing raw order data.
-* Standardizing date and time information.
-* Preparing delivery duration information.
-* Organizing restaurant categories.
-* Preparing quantity-related fields.
-* Creating date-related fields.
-* Creating time-related fields.
-* Creating day and month classifications.
-* Preparing data for Pivot Table analysis.
+### Order Quantity Analysis
 
+The average number of items per order in the analyzed calculations is approximately **3.8 items**.
 
+Orders were grouped into quantity categories to understand differences in order size and item volume.
 
-##  Feature Engineering
+### Food Category Analysis
 
-Additional analytical fields were created to support the analysis.
+The project analyzes order subtotals across multiple food categories.
 
-###  Date
+The dataset includes categories such as:
 
-The order creation date is extracted and organized for time-based analysis.
+- American
+- Mexican
+- Chinese
+- Indian
+- Italian
+- Japanese
+- Greek
+- Dessert
+- Middle Eastern
+- Seafood
+- Sushi
+- Vegetarian
+- Vegan
+- Pizza
+- Burger
+- Sandwich
+- Thai
+- Korean
+- Mediterranean
+- Other
 
-###  Time
+The category analysis helps compare order value and activity across different food categories.
 
-Order creation time is separated for analyzing ordering patterns.
+### Subtotal Analysis
 
-###  Day Name
+Order subtotal was analyzed across food categories, dates, and times.
 
-The day of the week is derived from the order date.
+This provides a way to understand differences in order-value activity across categories and time periods.
 
-###  Month Name
+### Pricing Analysis
 
-The month is extracted for monthly order analysis.
+The dataset contains minimum and maximum item-price fields.
 
-###  Quarter
+These were analyzed to understand pricing differences across markets and order characteristics.
 
-Quarter information is created to support quarterly analysis.
+### Delivery Partner Analysis
 
-###  Duration Minutes
+The project includes operational variables related to delivery partners:
 
-Delivery duration is represented in minutes to analyze delivery performance.
+- Total on-shift partners
+- Total busy partners
+- Total outstanding orders
 
-###  Quantity Size
+These metrics can be used to understand delivery-partner workload and operational pressure.
 
-Orders can be grouped based on quantity to understand order-size patterns.
+## Analysis & Key Insights
 
----
+Based on the calculations and analysis performed in the Excel workbook, the following key insights were identified:
 
-##  Key Analysis Areas
+- The dataset contains approximately **197,429 order records**.
+- The overall average delivery duration is approximately **34.45 minutes**.
+- Delivery duration varies across different days of the week.
+- **Saturday** has the highest average delivery duration among the analyzed days at approximately **42.50 minutes**.
+- **Tuesday** has the lowest average delivery duration among the analyzed days at approximately **22.17 minutes**.
+- The average number of items per order is approximately **3.8 items**.
+- The dataset contains a wide range of food categories, allowing category-level analysis of order activity and subtotal.
+- Order subtotal varies across food categories, dates, and times.
+- Delivery duration varies across different order hours.
+- Minimum and maximum item prices provide additional information for market-level pricing analysis.
+- The number of busy delivery partners and outstanding orders can be used to understand operational workload.
+- The calculated date, time, day, month, quarter, duration, and quantity fields support deeper operational analysis.
 
-### 1.  Order Analysis
+These findings are based on the calculations and data available in the Excel project.
 
-The project analyzes:
+## Dashboard Overview
 
-* Total orders
-* Total items
-* Distinct items per order
-* Order subtotal
-* Minimum item price
-* Maximum item price
-* Order quantity
+The Excel project includes a dashboard for presenting the major Porter Analytics findings.
 
+The dashboard focuses on:
 
+- Total Orders
+- Average Delivery Duration
+- Average Items per Order
+- Order Subtotal
+- Delivery Duration by Day
+- Delivery Duration by Time
+- Food Category Analysis
+- Order Quantity Analysis
+- Pricing Analysis
+- Delivery Partner Activity
+- Outstanding Orders
 
-### 2.  Restaurant Category Analysis
+The dashboard provides a summarized view of food delivery operations and helps users understand order and delivery patterns.
 
-The project examines:
+## Key Performance Indicators
 
-* Store categories
-* Number of orders by category
-* Popular food categories
-* Category-level order patterns
+| KPI | Description |
+|---|---|
+| Total Orders | Total number of orders analyzed |
+| Average Delivery Duration | Average time taken to deliver an order |
+| Average Items per Order | Average number of items in an order |
+| Total Subtotal | Total order value represented in the analysis |
+| On-Shift Partners | Number of delivery partners on shift |
+| Busy Partners | Number of delivery partners currently busy |
+| Outstanding Orders | Number of outstanding orders |
 
-Examples of categories represented in the dataset include:
+## Recommendations
 
-* American
-* Mexican
-* Indian
-* Italian
-* Sandwich
-* Thai
-* Cafe
-* Salad
-* Pizza
-* Chinese
-* Burger
-* Breakfast
-* Mediterranean
-* Japanese
-* Greek
+Based on the analysis performed, the following recommendations can be considered:
 
-
-### 3.  Delivery Performance Analysis
-
-The project analyzes:
-
-* Delivery duration
-* Average delivery duration
-* Delivery performance
-* Order timing
-* Delivery partner availability
-
-The **Duration minutes** field is used to measure delivery time.
-
-
-
-### 4. Delivery Partner Analysis
-
-The dataset contains operational information about delivery partners, including:
-
-* Total on-shift partners
-* Total busy partners
-* Total outstanding orders
-
-This helps analyze delivery capacity and operational workload.
-
-
-
-### 5.  Order Value Analysis
-
-The project analyzes:
-
-* Order subtotal
-* Minimum item price
-* Maximum item price
-* Total items
-* Number of distinct items
-
-This provides insight into customer order size and order value.
-
-
-
-## Dashboard
-
-The project includes a dedicated **Dashboard** sheet for presenting important analytical results.
-
-The dashboard is designed to provide a quick overview of:
-
-* Order volume
-* Delivery performance
-* Restaurant categories
-* Order quantities
-* Order value
-* Delivery partner activity
-
-Interactive Excel features such as **Pivot Charts and Slicers** can be used to explore the data.
-
-
-
-##  Important Metrics
-
-The analysis focuses on metrics such as:
-
-| Metric                        | Purpose                             |
-| ----------------------------- | ----------------------------------- |
-| **Total Orders**              | Measures overall order volume       |
-| **Total Items**               | Measures items ordered              |
-| **Average Delivery Duration** | Measures delivery performance       |
-| **Average Order Value**       | Measures typical order value        |
-| **Distinct Items**            | Measures product variety            |
-| **Busy Partners**             | Measures delivery workload          |
-| **Outstanding Orders**        | Measures pending operational demand |
-| **Orders by Category**        | Measures category popularity        |
-
-
-
-##  Key Questions Answered
-
-The project helps answer questions such as:
-
-* How many orders are placed?
-* Which restaurant categories receive the most orders?
-* What is the average delivery duration?
-* How does order quantity vary?
-* What is the average order value?
-* Which categories have larger order volumes?
-* How many delivery partners are available?
-* How many partners are busy?
-* How many orders remain outstanding?
-* How does delivery duration vary over time?
-* Which days or months show higher order activity?
-* What patterns exist between order size and delivery performance?
-
-
-
-## 📁 Project Structure
-
-
-Porter-Analytics-Excel-Project/
-│
-├── Porter_Analytics_excel_project3.xlsx
-│
-├── README.md
-│
-└── Dashboard/
-    └── Porter Analytics Dashboard
-
-
-### Excel Workbook Structure
-
-
-Porter_Analytics_excel_project3.xlsx
-│
-├── RAW
-│   └── Original food delivery dataset
-│
-├── Clean
-│   └── Cleaned and transformed dataset
-│
-├── Calculations
-│   └── Analytical calculations and Pivot Table summaries
-│
-└── Dashboard
-    └── Interactive analytics dashboard
-
-
-##  How to Use the Project
-
-### Step 1: Open the Excel Workbook
-
-Open:
-
-```text
-Porter_Analytics_excel_project3.xlsx
-```
-
-### Step 2: Explore the Raw Data
-
-Open the **RAW** sheet to view the original dataset.
-
-### Step 3: Review the Cleaned Data
-
-Open the **Clean** sheet to view the prepared dataset.
-
-### Step 4: Review Calculations
-
-Open the **Calculations** sheet to explore analytical calculations and summaries.
-
-### Step 5: View the Dashboard
-
-Open the **Dashboard** sheet to explore the visual analysis.
-
-### Step 6: Interact With the Dashboard
-
-Use available:
-
-* Slicers
-* Pivot Tables
-* Pivot Charts
-* Filters
-
-to explore different order and delivery patterns.
-
-
+- Monitor delivery duration across different days and time periods.
+- Analyze periods with longer delivery times to identify possible operational bottlenecks.
+- Align delivery-partner availability with order demand.
+- Monitor outstanding orders to identify workload pressure.
+- Analyze busy-partner levels together with outstanding orders.
+- Monitor food-category performance and order-value patterns.
+- Analyze order quantity patterns for better operational planning.
+- Monitor pricing differences across markets and food categories.
+- Use time-based order analysis to improve staffing and delivery allocation.
+- Regularly monitor delivery performance to identify changes in operational efficiency.
 
 ## Conclusion
 
-The **Porter Analytics – Food Delivery Data Analysis** project demonstrates how Microsoft Excel can be used to transform raw food delivery data into meaningful operational insights.
+The Porter Analytics Excel project demonstrates how Microsoft Excel can be used to analyze food delivery operations and generate meaningful business insights.
 
-The project covers **data cleaning, transformation, order analysis, restaurant category analysis, delivery performance, delivery partner activity, order value analysis, Pivot Table analysis, and dashboard development**.
+The project covers delivery duration, order quantity, food categories, pricing, order timing, order subtotals, delivery-partner availability, and outstanding orders.
 
-This project demonstrates practical skills in **Excel-based data analysis, data visualization, dashboard development, and business-oriented data interpretation**.
+Using Excel data cleaning, calculated fields, pivot tables, analysis, and dashboard visualization, the project transforms raw food delivery data into understandable operational insights.
 
-
-
-## Author
-
-### **Amisha**
-
-**M.Tech – Computer Science Engineering**
-**Aspiring Data Analyst**
-
-### Skills Demonstrated
+Overall, the project demonstrates practical skills in Excel-based data cleaning, data transformation, exploratory analysis, pivot table analysis, KPI development, data visualization, and dashboard design.
 
 
-Microsoft Excel
-Data Cleaning
-Data Transformation
-Data Analysis
-Pivot Tables
-Pivot Charts
-Slicers
-Data Visualization
-Dashboard Development
-Business Analytics
-
-## ⭐ Project Highlights
-
-* 🚚 Food Delivery Analytics
-* 📊 Excel Dashboard
-* 🛍️ Order Analysis
-* 🍽️ Restaurant Category Analysis
-* ⏱️ Delivery Duration Analysis
-* 👨‍🚚 Delivery Partner Analysis
-* 💰 Order Value Analysis
-* 📈 Pivot Table Analysis
-* 🎛️ Interactive Slicers
-* 🔍 Operational Insights
-
-
-<img width="1303" height="578" alt="image" src="https://github.com/user-attachments/assets/9e4332e5-1626-45a7-bfb6-bcc57466eb9f" />
+├── README.md
+└── Dashboard/
+    └── Porter Analytics Dashboard
